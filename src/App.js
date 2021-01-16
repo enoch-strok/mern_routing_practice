@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {Router, Link} from '@reach/router';
+
+import WelcomePage from './components/WelcomePage.jsx';
+import InputPage from './components/InputPage.jsx';
+import WordPageParameters from './components/WordPageParameters.jsx';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>This is App.js</h1>
+      <Router>
+          <WelcomePage path="/welcome" />
+          <InputPage path="/:id" />
+          <WordPageParameters path="/:id/:textColor/:backgroundColor" />
+      </Router>
     </div>
   );
 }
